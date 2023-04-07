@@ -20,6 +20,8 @@ jobs:
         sudo add-apt-repository ppa:deadsnakes/ppa
         sudo apt-get update
         sudo apt-get install python3.8
+        python3.8 -m pip install --upgrade pip
+        python3.8 -m pip install flask
     - name: Install dependencies
       run: npm ci
     - name: Install Playwright Browsers
