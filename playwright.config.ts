@@ -42,7 +42,7 @@ export default defineConfig({
     },
   ],
   webServer: {
-    command: 'py server.py',
+    command: 'python server.py',
     port: 5000,
     timeout: 120 * 1000,
   }
