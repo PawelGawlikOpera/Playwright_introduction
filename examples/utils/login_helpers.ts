@@ -2,9 +2,9 @@ import { Locator, Page } from '@playwright/test'
 
 export class Login {
     readonly page: Page;
-    readonly url = "https://authenticationtest.com/simpleFormAuth/";
-    readonly username = "admin";
-    readonly password = "admin123";
+    readonly url = "https://the-internet.herokuapp.com/login";
+    readonly username = "tomsmith";
+    readonly password = "SuperSecretPassword!";
     readonly usernamelInput: Locator;
     readonly passwordInput: Locator;
     readonly button: Locator;
@@ -13,11 +13,11 @@ export class Login {
         this.page = page;
         this.usernamelInput = page.locator("#username");
         this.passwordInput = page.locator("#password");
-        this.button = page.locator("#button");
+        this.button = page.locator('button[class*="radius"]');
     }
 
     async goToLoginPage() {
-        await this.page.goto('/');
+        await this.page.goto(this.url);
       }
 
     async login(){
