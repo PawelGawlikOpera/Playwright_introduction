@@ -2,13 +2,14 @@
 import { chromium, FullConfig } from '@playwright/test';
 
 async function globalSetup(config: FullConfig) {
-  const { baseURL, storageState } = config.projects[0].use;
+  const { storageState } = config.projects[0].use;
   const browser = await chromium.launch();
   const page = await browser.newPage();
-  await page.goto("https://the-internet.herokuapp.com/login");
-  await page.locator("#username").fill('tomsmith');
-  await page.locator("#password").fill('SuperSecretPassword!');
-  await page.locator('button[class*="radius"]').click();
+  await page.goto("https://pl.wikipedia.org/w/index.php?title=Specjalna:Zaloguj&returnto=Wikipedia%3AStrona+główna");
+  await page.locator("#wpName1").fill('TestOpera');
+  await page.locator("#wpPassword1").fill('Playwright');
+  await page.locator('#wpLoginAttempt').click();
+  await page.waitForSelector('#main-page-welcome');
   await page.context().storageState({ path: storageState as string });
   await browser.close();
 }
