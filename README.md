@@ -1,5 +1,18 @@
 # Playwright_introduction
 
+# How to run:
+```
+1. Clone repo
+```
+```
+2. In root folder type npm install
+```
+```
+3. Open requirements.txt and press Create Enviromant (in Vs Code)
+```
+```
+4. Type py -m pip install flask
+```
 ## Tests:
 ### _BasicTest.spec.ts_:
 ```
