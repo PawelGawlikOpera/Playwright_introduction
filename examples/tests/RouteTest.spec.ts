@@ -17,7 +17,7 @@ test("Abort img", async ({ page }) => {
 test("Change img", async ({ page }) => {
 
     await page.route(/(png|jpeg)$/, (route) =>{
-        const newImageBuffer = fs.readFileSync('../testing.png');
+        const newImageBuffer = fs.readFileSync('examples/tests/testing.png');
         route.fulfill({
             body: newImageBuffer,
             contentType: 'image/png' // Ustawić odpowiedni typ MIME dla nowego obrazka
